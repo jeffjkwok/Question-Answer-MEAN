@@ -1,0 +1,17 @@
+<div ng-controller='sessionController'>
+	<div ng-controller='questionController'>
+		<p><a href="#/dashboard">Home</a> | <a href='' ng-click="toAnswer(theQuestion._id)">Answer this Question</a></p>
+		<a href="/logout">Logout</a>
+		<h1 ng-bind='theQuestion.question'></h1>
+		<h4 ng-bind='theQuestion.description'></h4>
+		<div id='answer' ng-repeat="answer in theQuestion._answers | orderBy:'-likes'">
+			<hr>
+			<p ng-bind=answer.username></p>
+			<span ng-bind='answer.likes'></span> <span>likes</span>&nbsp<button ng-click='like(answer._id, answer.likes)'>Like!</button>	
+			<div id='answer1'>
+				<p> <b ng-bind='answer.answer'></b></p>
+				<p ng-bind='answer.details'></p>
+			</div>
+		</div>
+	</div>
+</div>

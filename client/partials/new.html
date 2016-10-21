@@ -1,0 +1,13 @@
+<div ng-controller = 'sessionController'>
+	<div ng-controller ='questionController'>
+		<a href="#/dashboard">Home</a>
+		<a href="/logout">Logout</a><br>
+		<form ng-submit='postQuestion()'>
+			<h1>New Question</h1>
+			Question:<br><textarea cols='40' rows='5'ng-model='question.question'></textarea><br>
+			Description (optional):<br><textarea cols='40' rows='5' ng-model='question.description'></textarea><br>
+			<a href="#/dashboard"><button>Cancel</button></a>
+			<input type="submit">
+		</form>
+	</div>
+</div>
